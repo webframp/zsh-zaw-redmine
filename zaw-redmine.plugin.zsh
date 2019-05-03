@@ -41,7 +41,7 @@ function fetch_issues() {
     if [[ ! -d "$issue_cache_file" ]]; then
         mkdir -p "$issue_cache_file:h" # like dirname
     fi
-    redmine_curl "${redmine_url}/issues.json?assigned_to_id=me" > "$issue_cache_file"
+    redmine_curl "${redmine_url}/issues.json?assigned_to_id=me" >! "$issue_cache_file"
 }
 
 ## ZAW setup
